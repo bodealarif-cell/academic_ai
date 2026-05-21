@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مِحراب العلم | صرح الأستاذ فهمان للثانوية العامة</title>
+    
+    <!-- Google Fonts: Cairo and Amiri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <span class="brand-icon" style="font-size: 1.8rem; margin-left: 8px;">🎓</span>
+                    <div class="brand-text">
+                        <h2>مِحراب العلم</h2>
+                        <span>صرح الأستاذ فهمان</span>
+                    </div>
+                </div>
+                <button class="close-sidebar-btn" id="closeSidebar" title="إغلاق القائمة">
+                    ❌
+                </button>
+            </div>
+            
+            <button class="btn btn-gold new-chat-btn" id="newChatBtn">
+                <span style="font-size: 1.2rem; margin-left: 8px;">📝</span>
+                <span>جلسة علمية جديدة</span>
+            </button>
+            
+            <div class="search-box">
+                <span class="search-icon" style="margin-left: 8px; font-size: 1rem;">🔍</span>
+                <input type="text" id="chatSearch" placeholder="ابحث في الحلقات السابقة...">
+            </div>
+            
+            <div class="chat-history-container">
+                <div class="history-label">الحلقات الدراسية المؤرشفة</div>
+                <ul class="chat-history-list" id="chatHistoryList">
+                    <!-- Dynamic chat history items will be injected here -->
+                </ul>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="footer-action-btn" id="curriculumFeedsBtn">
+                    <span style="margin-left: 8px;">🧠</span>
+                    <span>تغذيته المعرفية المضافة</span>
+                </button>
+                
+                <button class="footer-action-btn" id="academicLoginBtn">
+                    <span style="margin-left: 8px;">👨‍🏫</span>
+                    <span id="loginBtnText">تسجيل دخول أكاديمي</span>
+                </button>
+                
+                <button class="btn btn-burgundy upgrade-btn" id="upgradeBtn">
+                    <span class="gold-text" style="margin-left: 8px;">👑</span>
+                    <span>الترقية للمنحة الذهبية</span>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header bar -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="menu-toggle-btn" id="menuToggle" title="فتح القائمة">
+                        <span style="font-size: 1.4rem;">☰</span>
+                    </button>
+                    <div class="professor-status">
+                        <div class="status-dot"></div>
+                        <span class="status-text">الأستاذ فهمان في مجلسه العلمي (متصل)</span>
+                    </div>
+                </div>
+                <div class="header-right" style="display: flex; align-items: center; gap: 12px;">
+                    <button id="themeToggleBtn" title="تغيير المظهر (ليلي / نهاري)" style="padding: 6px 14px; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; background-color: var(--bg-card); border: var(--border-gold-thin); color: var(--gold-primary); cursor: pointer; border-radius: 20px; font-family: var(--font-ui); font-weight: 600;">
+                        <span style="font-size: 0.95rem;">🌓</span>
+                        <span id="themeToggleText">المظهر الداكن</span>
+                    </button>
+                    <span class="gold-text" style="font-weight: 700; font-size: 0.85rem; background-color: rgba(74, 14, 23, 0.2); padding: 6px 14px; border-radius: 20px; border: var(--border-gold-thin);">
+                        🏆 شعبة علمي علوم واللغات
+                    </span>
+                </div>
+            </header>
+            
+            <!-- Chat Container -->
+            <div class="chat-viewport" id="chatViewport">
+                <!-- Welcome View (Default State) -->
+                <div class="welcome-container" id="welcomeView">
+                    <div class="professor-intro-card">
+                        <div class="professor-portrait-wrapper">
+                            <img src="assets/professor.png" alt="الأستاذ فهمان" class="professor-portrait" id="welcomeProfPortrait">
+                            <div class="portrait-glow"></div>
+                        </div>
+                        <h1 class="welcome-title">الأستاذ فهمان</h1>
+                        <p class="welcome-subtitle">كبير معلمي علمي علوم واللغات بالثانوية المصرية العتيقة</p>
+                        
+                        <div class="welcome-quote">
+                            <span class="quote-icon-start" style="font-size: 1.5rem; color: var(--gold-primary); margin-left: 8px; font-family: sans-serif;">❝</span>
+                            <span>يا بني، إن العلم صيدٌ نافعٌ والتدوين قيدٌ له، فلا تضيع فرصة المعرفة. لقد حشدتُ لك في هذا الصرح خلاصة المراجع والكتب في الأحياء، والجيولوجيا، والفيزياء، والكيمياء، ولغات العرب والعجم. سلني في معضلات المنهج لتجد إجابةً رصينةً تشفي غليلك وتُنير سبيلك نحو التفوق.</span>
+                            <span class="quote-icon-end" style="font-size: 1.5rem; color: var(--gold-primary); margin-right: 8px; font-family: sans-serif;">❞</span>
+                        </div>
+                    </div>
+                    
+                    <div class="suggestions-section">
+                        <h3>من أين نبتدئ دراستنا اليوم؟</h3>
+                        <div class="suggestions-grid">
+                            <div class="suggestion-card" data-query="ما هي آلية انقباض العضلة الهيكلية طبقاً نظرية الخيوط المنزلقة لهكسلي؟">
+                                <div class="card-header-icon"><span style="margin-left: 5px;">🧬</span> الأحياء</div>
+                                <p>"ما هي آلية انقباض العضلة الهيكلية طبقاً لنظرية الخيوط المنزلقة لهكسلي؟"</p>
+                            </div>
+                            <div class="suggestion-card" data-query="كيف نميز بين الفالق العادي والفالق المعكوس في التراكيب الجيولوجية؟">
+                                <div class="card-header-icon"><span style="margin-left: 5px;">🌋</span> الجيولوجيا</div>
+                                <p>"كيف نميز بين الفالق العادي والفالق المعكوس في التراكيب الجيولوجية؟"</p>
+                            </div>
+                            <div class="suggestion-card" data-query="اكتب معادلة تحضير الإيثين في المختبر بالتفصيل مع شروط التفاعل.">
+                                <div class="card-header-icon"><span style="margin-left: 5px;">🧪</span> الكيمياء العضوية</div>
+                                <p>"اكتب معادلة تحضير الإيثين في المختبر بالتفصيل مع شروط التفاعل."</p>
+                            </div>
+                            <div class="suggestion-card" data-query="ما هو قانون أوم للدائرة المغلقة وما الفرق بين القوة الدافعة وفرق الجهد؟">
+                                <div class="card-header-icon"><span style="margin-left: 5px;">⚡</span> الفيزياء الكهربية</div>
+                                <p>"ما هو قانون أوم للدائرة المغلقة وما الفرق بين القوة الدافعة وفرق الجهد؟"</p>
+                            </div>
+                            <div class="suggestion-card" data-query="ما هي شروط عمل لا النافية للجنس في النحو العربي وما هي أحوال اسمها؟">
+                                <div class="card-header-icon"><span style="margin-left: 5px;">📜</span> اللغة العربية</div>
+                                <p>"ما هي شروط عمل لا النافية للجنس في النحو العربي وما هي أحوال اسمها؟"</p>
+                            </div>
+                            <div class="suggestion-card" data-query="Explain the difference between Present Perfect and Past Simple in English grammar.">
+                                <div class="card-header-icon"><span style="margin-left: 5px;">🇬🇧</span> اللغة الإنجليزية</div>
+                                <p>"Explain the difference between Present Perfect and Past Simple in English grammar."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Messages Box -->
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Dynamic chat messages go here -->
+                </div>
+            </div>
+            
+            <!-- Bottom Input Panel -->
+            <footer class="input-panel">
+                <!-- Selected File Indicator Bar -->
+                <div class="attachment-status-bar" id="attachmentStatusBar" style="display: none;">
+                    <div class="attachment-info">
+                        <span class="clip-icon" style="margin-left: 8px;">📎</span>
+                        <span class="attachment-name" id="attachmentName">file.txt</span>
+                        <span class="attachment-size" id="attachmentSize">(2.4 KB)</span>
+                    </div>
+                    <button class="remove-attachment-btn" id="removeAttachmentBtn" title="إلغاء المرفق">
+                        ❌
+                    </button>
+                </div>
+                
+                <!-- Input Controls -->
+                <div class="input-wrapper">
+                    <!-- Attachment Triggers -->
+                    <div class="input-actions-left">
+                        <label class="action-btn-label" title="حقن مستند (تغذية معرفية للأستاذ)">
+                            <span style="font-size: 1.3rem; cursor: pointer;">📄</span>
+                            <input type="file" id="textFilePicker" accept=".txt" style="display: none;">
+                        </label>
+                        <label class="action-btn-label" title="رفع صورة مسألة لتحليلها">
+                            <span style="font-size: 1.3rem; cursor: pointer;">📷</span>
+                            <input type="file" id="imageFilePicker" accept="image/*" style="display: none;">
+                        </label>
+                    </div>
+                    
+                    <!-- TextArea Input -->
+                    <div class="textarea-container">
+                        <textarea id="studentInput" placeholder="اكتب سؤالك التعليمي هنا يا بني للأستاذ فهمان..." rows="1"></textarea>
+                    </div>
+                    
+                    <!-- Send Button -->
+                    <div class="input-actions-right">
+                        <button class="send-btn" id="sendBtn" title="أرسل سؤالك للأستاذ">
+                            <span style="font-size: 1.2rem; display: inline-block; transform: scaleX(-1);">⬅️</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-footer-note">
+                    المنصة مجهزة بقاعدة المعرفة الكاملة لمنهج علمي علوم واللغات للثانوية العامة المصرية.
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <!-- Modal: Academic Login (Mockup) -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>تسجيل الدخول الأكاديمي للطلاب</h3>
+                <button class="modal-close" id="closeLoginModal">❌</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="studentName">اسم الطالب ثلاثياً</label>
+                    <input type="text" id="studentName" placeholder="مثال: أحمد محمد علي">
+                </div>
+                <div class="form-group">
+                    <label for="studentSchool">اسم المدرسة</label>
+                    <input type="text" id="studentSchool" placeholder="مثال: مدرسة السعيدية الثانوية العسكرية">
+                </div>
+                <div class="form-group">
+                    <label for="studentGov">المحافظة</label>
+                    <input type="text" id="studentGov" placeholder="مثال: القاهرة">
+                </div>
+                <button class="btn btn-gold w-100 mt-1" id="saveLoginBtn">دخول لمجلس العلم</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Curriculum Feeds Manager (Custom Knowledge Base) -->
+    <div class="modal-overlay" id="feedsModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>التغذية المعرفية الذاتية (الملفات المرفوعة)</h3>
+                <button class="modal-close" id="closeFeedsModal">❌</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-desc">
+                    لقد قمت برفع هذه المستندات لتحديث وعي الأستاذ فهمان وحفظها في الذاكرة المحلية (LocalStorage). يمكنك إدارتها أو مسحها من هنا:
+                </p>
+                <div class="feeds-list-wrapper">
+                    <ul class="feeds-list" id="feedsList">
+                        <!-- Dynamic list of feeds -->
+                    </ul>
+                </div>
+                <div class="feeds-actions">
+                    <button class="btn btn-burgundy w-100" id="clearAllFeedsBtn">
+                        <span style="margin-left: 8px;">🗑️</span> مسح كامل الذاكرة المعرفية المضافة
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Upgrade to Premium -->
+    <div class="modal-overlay" id="upgradeModal">
+        <div class="modal-card upgrade-card">
+            <div class="modal-header">
+                <h3>المنحة الدراسية الذهبية للأستاذ</h3>
+                <button class="modal-close" id="closeUpgradeModal">❌</button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="upgrade-icon-wrapper" style="margin-bottom: 15px;">
+                    <span class="gold-text large-icon" style="font-size: 3.5rem;">👑</span>
+                </div>
+                <h4 class="upgrade-title">بوابة رعاية الطلاب المتفوقين</h4>
+                <p>قم بالترقية للمنحة الذهبية لفتح مزايا استثنائية تشمل:</p>
+                <ul class="upgrade-features" style="text-align: right; list-style: none; padding: 0; margin: 15px 0;">
+                    <li style="margin-bottom: 10px;"><span class="gold-text" style="margin-left: 8px;">✅</span> فحص مستندات ومذكرات دراسية غير محدودة الحجم.</li>
+                    <li style="margin-bottom: 10px;"><span class="gold-text" style="margin-left: 8px;">✅</span> تحليل الصور المجهرية ورسومات الأجهزة والقطاعات المعقدة.</li>
+                    <li style="margin-bottom: 10px;"><span class="gold-text" style="margin-left: 8px;">✅</span> توليد اختبارات تدريبية مفصلة بنظام بابل شيت (Bubble Sheet).</li>
+                    <li style="margin-bottom: 10px;"><span class="gold-text" style="margin-left: 8px;">✅</span> نصائح دراسية ونفسية مخصصة لتخطي قلق الامتحان.</li>
+                </ul>
+                <button class="btn btn-gold w-100 mt-2" id="upgradeConfirmBtn">تفعيل المنحة الذهبية الآن</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Core Logic File -->
+    <script src="js/app.js"></script>
+</body>
+</html>
